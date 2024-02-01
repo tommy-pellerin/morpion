@@ -1,5 +1,6 @@
 class Game #c'est le jeu. Elle initialise tout, lance une partie (qui se termine avec une victoire ou un nul), permet de jouer un tour, de chercher si la partie est finie, etc.
 attr_accessor :player_x, :player_o, :board_game
+
   def initialize(player_x_name,player_o_name)
     @player_x = Player.new(player_x_name,"x")
     @player_o = Player.new(player_o_name,"o")
@@ -56,7 +57,8 @@ attr_accessor :player_x, :player_o, :board_game
 
   def show_board
     puts "Voici l'état du plateau :"
-    @board_game.board_stat
+    # @board_game.board_stat #on passe de l'utilisation de la class Board à la class Show
+    Show.new.show_board(@board_game)
 
   end
 

@@ -5,13 +5,13 @@ class Board #c'est le plateau. Il doit y avoir une instance de cette classe lors
     def initialize
       @cellsA1 = Cells.new('A1',"_")
       @cellsA2 = Cells.new('A2',"_")
-      @cellsA3 = Cells.new('A3',".")
+      @cellsA3 = Cells.new('A3'," ")
       @cellsB1 = Cells.new('B1',"_")
       @cellsB2 = Cells.new('B2',"_")
       @cellsB3 = Cells.new('B3'," ")
       @cellsC1 = Cells.new('C1',"_")
       @cellsC2 = Cells.new('C2',"_")
-      @cellsC3 = Cells.new('C3',".")
+      @cellsC3 = Cells.new('C3'," ")
     end
 
     def place_pawn(position,pawn)
@@ -47,17 +47,18 @@ class Board #c'est le plateau. Il doit y avoir une instance de cette classe lors
     def is_there_a_winner? # il y a un gagnant si 1 des 8 conditions est remplis
       if @cellsA1.cell_content == @cellsA2.cell_content  && @cellsA2.cell_content == @cellsA3.cell_content && @cellsA3.cell_content != "_"|| @cellsB1.cell_content == @cellsB2.cell_content && @cellsB2.cell_content == @cellsB3.cell_content && @cellsB3.cell_content != "_" || @cellsC1.cell_content == @cellsC2.cell_content && @cellsC2.cell_content == @cellsC3.cell_content && @cellsC3.cell_content != "_"
         true
-      elsif @cellsA1.cell_content == @cellsB1.cell_content && @cellsB1.cell_content == @cellsC1.cell_content && @cellsC1.cell_content != "_" || @cellsA2.cell_content == @cellsB2.cell_content && @cellsB2.cell_content == @cellsC2.cell_content && @cellsC2.cell_content != "_" || @cellsA3.cell_content == @cellsB3.cell_content && @cellsB3.cell_content == @cellsC3.cell_content && @cellsB3.cell_content != "_"
+      elsif @cellsA1.cell_content == @cellsB1.cell_content && @cellsB1.cell_content == @cellsC1.cell_content && @cellsC1.cell_content != "_" || @cellsA2.cell_content == @cellsB2.cell_content && @cellsB2.cell_content == @cellsC2.cell_content && @cellsC2.cell_content != "_" || @cellsA3.cell_content == @cellsB3.cell_content && @cellsB3.cell_content == @cellsC3.cell_content && @cellsA3.cell_content != " "
         true
       elsif @cellsA1.cell_content == @cellsB2.cell_content && @cellsB2.cell_content == @cellsC3.cell_content && @cellsC3.cell_content != "_" || @cellsA3.cell_content == @cellsB2.cell_content && @cellsB2.cell_content == @cellsC1.cell_content && @cellsC1.cell_content != "_"
         true
       end
     end
 
-    def board_stat
-      puts "  #{@cellsA1.cell_content}|#{@cellsB1.cell_content}|#{@cellsC1.cell_content}"
-      puts "  #{@cellsA2.cell_content}|#{@cellsB2.cell_content}|#{@cellsC2.cell_content}"
-      puts "  #{@cellsA3.cell_content}|#{@cellsB3.cell_content}|#{@cellsC3.cell_content}"
-    end
+    # def board_stat #j'ai tout transféré dans la class SHOW
+      
+    #   puts "  #{@cellsA1.cell_content}|#{@cellsB1.cell_content}|#{@cellsC1.cell_content}"
+    #   puts "  #{@cellsA2.cell_content}|#{@cellsB2.cell_content}|#{@cellsC2.cell_content}"
+    #   puts "  #{@cellsA3.cell_content}|#{@cellsB3.cell_content}|#{@cellsC3.cell_content}"
+    # end
 
 end #end of class

@@ -6,14 +6,5 @@ attr_accessor :cell_position, :cell_content
     @cell_content = content
   end
 
-  def change_content
-    
-    case @cell_position
-      when "A1"
-         @cell_content = x
-      when "A2"
-        @cell_content = x
-    end
-  end
-
+  
 end #end of class
